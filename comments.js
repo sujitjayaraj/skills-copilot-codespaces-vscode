@@ -1,46 +1,18 @@
-// Create a web server
-// 1. Load the express module
+// Create web server
 const express = require('express');
-// 2. Create an express application
 const app = express();
-// 3. Create a route for GET method
-app.get('/', (req, res) => {
-  res.send('Hello World');
-});
-// 4. Start the server
-app.listen(3000, () => {
-  console.log('Server is running on http://localhost:3000');
-});
-// 5. Run the server
-// node comments.js
-// 6. Open the browser and type http://localhost:3000
-// 7. To stop the server, press Ctrl + C
-// 8. Change the message in the send method and refresh the page
-// 9. Add a new route for GET method
+const port = 3000;
+
+// Create a route to handle GET requests to the /comments path
 app.get('/comments', (req, res) => {
-  res.send('This is the comments page');
+  res.send('This is the comments route!');
 });
-// 10. Add a new route for POST method
-app.post('/comments', (req, res) => {
-  res.send('This is the comments page');
+
+// Start the server on port 3000
+app.listen(port, () => {
+  console.log(`Server is listening on port ${port}`);
 });
-// 11. Add a new route for PUT method
-app.put('/comments', (req, res) => {
-  res.send('This is the comments page');
-});
-// 12. Add a new route for DELETE method
-app.delete('/comments', (req, res) => {
-  res.send('This is the comments page');
-});
-// 13. Add a new route for PATCH method
-app.patch('/comments', (req, res) => {
-  res.send('This is the comments page');
-});
-// 14. Add a new route for OPTIONS method
-app.options('/comments', (req, res) => {
-  res.send('This is the comments page');
-});
-// 15. Add a new route for HEAD method
-app.head('/comments', (req, res) => {
-  res.send('This is the comments page');
-});
+
+// Run the server using node comments.js
+// Open a browser and navigate to http://localhost:3000/comments
+// You should see the message This is the comments route! displayed in the browser.
